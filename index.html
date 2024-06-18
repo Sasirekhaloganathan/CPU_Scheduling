@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Scheduling Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CPU Scheduling Simulator</h1>
+        <div class="input-section">
+            <h2>Input Processes</h2>
+            <table id="process-table">
+                <tr>
+                    <th>Process ID</th>
+                    <th>Arrival Time</th>
+                    <th>Burst Time</th>
+                    <th>Priority (For Priority Scheduling)</th>
+                </tr>
+            </table>
+            <button onclick="addProcess()">Add Process</button>
+        </div>
+        <div class="algorithm-section">
+            <h2>Select Scheduling Algorithm</h2>
+            <select id="algorithm">
+                <option value="fcfs">FCFS</option>
+                <option value="sjf">SJF</option>
+                <option value="srtf">SRTF</option>
+                <option value="priority">Priority</option>
+                <option value="rr">Round Robin</option>
+            </select>
+            <input type="number" id="time-quantum" placeholder="Time Quantum for RR" style="display: none;">
+            <button onclick="simulate()">Simulate</button>
+        </div>
+        <div class="result-section">
+            <h2>Results</h2>
+            <div id="gantt-chart"></div>
+            <div id="averages"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
